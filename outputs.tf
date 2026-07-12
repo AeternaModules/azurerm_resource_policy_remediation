@@ -1,3 +1,7 @@
+output "resource_policy_remediations_id" {
+  description = "Map of id values across all resource_policy_remediations, keyed the same as var.resource_policy_remediations"
+  value       = { for k, v in azurerm_resource_policy_remediation.resource_policy_remediations : k => v.id }
+}
 output "resource_policy_remediations_failure_percentage" {
   description = "Map of failure_percentage values across all resource_policy_remediations, keyed the same as var.resource_policy_remediations"
   value       = { for k, v in azurerm_resource_policy_remediation.resource_policy_remediations : k => v.failure_percentage }
